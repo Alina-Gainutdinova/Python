@@ -40,7 +40,7 @@ def displayVerse(n):
 
 
 def main():
-    for verse in range(1, 13):
+    for verse in range(1, 12):
         displayVerse(verse)
 
 
