@@ -35,20 +35,36 @@
 # if __name__ == '__main__':
 #     main()
 
-numeral = ['zero', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eight', 'ninth', 'tenth', 'eleventh' ]
+numeral = [
+    "zero",
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+    "sixth",
+    "seventh",
+    "eight",
+    "ninth",
+    "tenth",
+    "eleventh",
+]
+
 
 def numerals(num):
     if 1 <= num < 12:
-        print(numeral[num])
-    else: 
-        print("")    
+        return numeral[num]
+    else:
+        return ""
+
 
 def main():
-    nums = int(input('Введите целое число от 1 до 12: '))
+    nums = int(input("Введите целое число от 1 до 12: "))
     numerals(nums)
     i = 0
     for i in range(1, 12):
         print(numeral[i])
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

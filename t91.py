@@ -1,53 +1,28 @@
-# # григорианский календарь в порядковый
-# def ordinalDate(date, month, year):
+month_day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-#     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-#         if 1 <= date < 31 and month == 1:
-#             return date
-#         elif 1 <= date <= 28 and month == 2:
-#             return date + 31
-#         elif 1 <= date <= 31 and month == 3:
-#             return date + 31 + 28
-#         elif 1 <= date <= 30 and month == 4:
-#             return date + 31 + 28 + 31
-#         elif 1 <= date <= 31 and month == 5:
-#             return date + 31 + 28 + 31 + 30
-#         elif 1 <= date <= 30 and month == 6:
-#            return date + 31 + 28 + 31 + 30 + 31
-#         elif 1 <= date <= 31 and month == 7:
-#             return date + 31 + 28 + 31 + 30 + 31 + 30
-#         elif 1 <= date <= 31 and month == 8:
-#             return date + 31 + 28 + 31 + 30 + 31 + 30 + 31
-#         elif 1 <= date <= 30 and month == 9:
-#            return date + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31
-#         elif 1 <= date <= 31 and month == 10:
-#             return date + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30
-#         elif 1 <= date <= 30 and month == 11:
-#             return date + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31
-#         elif 1 <= date <= 31 and month == 12:
-#             return date + 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30
-#     else:
-#         return date - 1
+
+def is_leap_year(year):
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        return True
+    else:
+        return False
 
 
 def ordinalDate(date, month, year):
-    feb = 28
-    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-        feb = 29
-    month_day = [31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-    acc = date
+    acc_days = date
+    if is_leap_year(year):
+        acc_days += 1
     for i in range(month - 1):
-        acc += month_day[i]
-    return acc
+        acc_days += month_day[i]
+    return acc_days
 
 
 def main():
-    dt = int(input("Введите день: "))
+    dt = int(input("Введите дату: "))
     mth = int(input("Введите месяц: "))
     yr = int(input("Введите год: "))
-    print(f'Порядковый номер дня: {ordinalDate(dt, mth, yr)}')
+    print(f"Порядковый номер дня: {ordinalDate(dt, mth, yr)}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
