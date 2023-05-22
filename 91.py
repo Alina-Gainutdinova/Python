@@ -1,3 +1,4 @@
+# старая версия функции
 def ordinalDate(date, month, year):
     month_day = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:

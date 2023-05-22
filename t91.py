@@ -1,6 +1,6 @@
 month_day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-
+# Изменёный вариант 
 def is_leap_year(year):
     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
         return True
