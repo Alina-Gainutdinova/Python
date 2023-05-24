@@ -1,14 +1,3 @@
-# def headline(text):
-# text = input('....').split(" ")
-# sign = ['.', '!', '?']
-# i = 0
-# for i in text:
-#     if i == sign:
-#         print(str(i.upper()))
-#     i += 1
-# print(headline('алина.малина'))    
-        
-
 def correct(txt: str):
     c = 1
     txt_ = ''
@@ -22,4 +11,6 @@ def correct(txt: str):
         else:
             txt_ += char
     return txt_
-print(correct('hello!alina'))                    
+print(correct('hello!alina'))   
+def main():
+                     
