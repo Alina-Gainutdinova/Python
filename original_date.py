@@ -1,6 +1,6 @@
 # >>> 22.03.2004
 # 82
-from t91 import ordinalDate
+from task91 import ordinalDate
 date = input('Enter date: ').split('.')
 day = int(date[0])
 month = int(date[1])
